@@ -215,34 +215,40 @@ span.combo, span.fruits {
 	opacity: 0.7;
 }
 #control-up-big { 
-	bottom: 10px;
-	left: 0px;
-	right: 0px;
-	width: 125px;
-	height: 125px;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 80px;
 	background-image: url('../img/move-up-big.png');
+	background-size: 80px;
 }
 #control-down-big { 
-	bottom: -120px;
-	left: 0px;
-	right: 0px;
-	width: 125px;
-	height: 125px;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 80px;
+	height: 80px;
 	background-image: url('../img/move-down-big.png');
+	background-size: 80px;
 }
 #control-left-big { 
-	left: 80px;
-	bottom: -90px;
-	width: 125px;
-	height: 175px;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 80px;
+	height: 80px;
 	background-image: url('../img/move-left-big.png');
+	background-size: 80px;
 }
 #control-right-big { 
-	right: 80px;
-	bottom: -90px;
-	width: 125px;
-	height: 175px;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 80px;
+	height: 80px;
 	background-image: url('../img/move-right-big.png');
+	background-size: 80px;
 }
 
 
@@ -367,11 +373,11 @@ h3 {
 	#board, #canvas-board, #canvas-paths, #canvas-fruits, 
 	#canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
 	#canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
-		width: 100vw;
-		height: 100vw;
-		max-width: 100vh;
-		max-height: 100vh;
-		top: 50%;
+		width: 95vw;
+		height: 95vw;
+		max-width: 95vh;
+		max-height: 95vh;
+		top: 45%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 	}
@@ -382,6 +388,7 @@ h3 {
 		padding: 5px;
 		border-radius: 5px;
 		width: 140px;
+		z-index: 1000;
 	}
 	
 	#score {
@@ -399,14 +406,16 @@ h3 {
 		transform: translate(-50%, -50%);
 		width: 80%;
 		font-size: 18px;
+		z-index: 1000;
 	}
 	
 	#canvas-lifes, #canvas-level-fruits {
-		bottom: 70px;
+		bottom: 100px;
 		top: auto;
 		background: rgba(0,0,0,0.8);
 		padding: 5px;
 		border-radius: 5px;
+		z-index: 1000;
 	}
 	
 	#canvas-lifes {
@@ -417,9 +426,47 @@ h3 {
 		right: 10px;
 	}
 	
+	/* Fixed Mobile Control Positions */
 	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
 		display: block !important;
 		opacity: 0.3;
+		z-index: 9999;
+	}
+	
+	#control-up-big {
+		top: 15vh;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70px;
+		height: 70px;
+		background-size: 70px;
+	}
+	
+	#control-down-big {
+		bottom: 15vh;
+		left: 50%;
+		transform: translateX(-50%);
+		width: 70px;
+		height: 70px;
+		background-size: 70px;
+	}
+	
+	#control-left-big {
+		left: 10vw;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 70px;
+		height: 70px;
+		background-size: 70px;
+	}
+	
+	#control-right-big {
+		right: 10vw;
+		top: 50%;
+		transform: translateY(-50%);
+		width: 70px;
+		height: 70px;
+		background-size: 70px;
 	}
 	
 	.help-button {
@@ -428,6 +475,7 @@ h3 {
 		background: rgba(0,0,0,0.8);
 		padding: 8px 12px;
 		border-radius: 5px;
+		z-index: 1000;
 	}
 	
 	.sound, .github {
@@ -439,6 +487,57 @@ h3 {
 		margin-bottom: 20px;
 		text-align: center;
 		padding-top: 10px;
+		z-index: 1000;
+	}
+}
+
+/* Landscape Mobile Optimization */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+	#board, #canvas-board, #canvas-paths, #canvas-fruits, 
+	#canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
+	#canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
+		width: 80vh;
+		height: 80vh;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	#control-up-big {
+		top: 20vh;
+		width: 60px;
+		height: 60px;
+		background-size: 60px;
+	}
+	
+	#control-down-big {
+		bottom: 20vh;
+		width: 60px;
+		height: 60px;
+		background-size: 60px;
+	}
+	
+	#control-left-big {
+		left: 5vw;
+		width: 60px;
+		height: 60px;
+		background-size: 60px;
+	}
+	
+	#control-right-big {
+		right: 5vw;
+		width: 60px;
+		height: 60px;
+		background-size: 60px;
+	}
+	
+	#score, #highscore {
+		top: 5px;
+		width: 120px;
+	}
+	
+	#canvas-lifes, #canvas-level-fruits {
+		bottom: 10px;
 	}
 }
 
@@ -454,6 +553,37 @@ h3 {
 	.help-button {
 		font-size: 12px;
 		padding: 6px 10px;
+	}
+	
+	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
+		width: 60px;
+		height: 60px;
+		background-size: 60px;
+	}
+}
+
+/* Small Phones */
+@media screen and (max-width: 360px), screen and (max-device-width: 360px) {
+	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
+		width: 50px;
+		height: 50px;
+		background-size: 50px;
+	}
+	
+	#control-up-big {
+		top: 12vh;
+	}
+	
+	#control-down-big {
+		bottom: 12vh;
+	}
+	
+	#control-left-big {
+		left: 5vw;
+	}
+	
+	#control-right-big {
+		right: 5vw;
 	}
 }
 
