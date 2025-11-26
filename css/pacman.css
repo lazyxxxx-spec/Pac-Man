@@ -206,49 +206,27 @@ span.combo, span.fruits {
 	margin: auto;
 	padding: 0px;
 	display: none;
-	background-size: 98px;
+	background-size: 60px;
 	z-index: 999999;
 	touch-action: manipulation;
 	transition: opacity 0.1s;
+	width: 60px;
+	height: 60px;
 }
 #control-up-big:active, #control-down-big:active, #control-left-big:active, #control-right-big:active {
 	opacity: 0.7;
 }
 #control-up-big { 
-	top: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 80px;
-	height: 80px;
 	background-image: url('../img/move-up-big.png');
-	background-size: 80px;
 }
 #control-down-big { 
-	bottom: 20px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 80px;
-	height: 80px;
 	background-image: url('../img/move-down-big.png');
-	background-size: 80px;
 }
 #control-left-big { 
-	left: 20px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 80px;
-	height: 80px;
 	background-image: url('../img/move-left-big.png');
-	background-size: 80px;
 }
 #control-right-big { 
-	right: 20px;
-	top: 50%;
-	transform: translateY(-50%);
-	width: 80px;
-	height: 80px;
 	background-image: url('../img/move-right-big.png');
-	background-size: 80px;
 }
 
 
@@ -358,7 +336,7 @@ h3 {
 	position: absolute;
 }
 
-/* Mobile Responsive Styles */
+/* Mobile Responsive Styles - BOTTOM D-PAD LAYOUT */
 @media screen and (max-width: 768px), screen and (max-device-width: 768px) {
 	#panel, #home {
 		width: 100vw;
@@ -377,9 +355,9 @@ h3 {
 		height: 95vw;
 		max-width: 95vh;
 		max-height: 95vh;
-		top: 45%;
+		top: 10%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateX(-50%);
 	}
 	
 	#score, #highscore {
@@ -410,8 +388,8 @@ h3 {
 	}
 	
 	#canvas-lifes, #canvas-level-fruits {
-		bottom: 100px;
-		top: auto;
+		top: 70px;
+		bottom: auto;
 		background: rgba(0,0,0,0.8);
 		padding: 5px;
 		border-radius: 5px;
@@ -426,47 +404,39 @@ h3 {
 		right: 10px;
 	}
 	
-	/* Fixed Mobile Control Positions */
+	/* BOTTOM D-PAD CONTROLS - Close together */
 	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
 		display: block !important;
 		opacity: 0.3;
 		z-index: 9999;
-	}
-	
-	#control-up-big {
-		top: 15vh;
-		left: 50%;
-		transform: translateX(-50%);
 		width: 70px;
 		height: 70px;
 		background-size: 70px;
+	}
+	
+	/* D-pad layout at bottom center */
+	#control-up-big {
+		bottom: 100px;
+		left: 50%;
+		transform: translateX(-50%);
 	}
 	
 	#control-down-big {
-		bottom: 15vh;
+		bottom: 20px;
 		left: 50%;
 		transform: translateX(-50%);
-		width: 70px;
-		height: 70px;
-		background-size: 70px;
 	}
 	
 	#control-left-big {
-		left: 10vw;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 70px;
-		height: 70px;
-		background-size: 70px;
+		bottom: 60px;
+		left: calc(50% - 80px);
+		transform: translateX(-50%);
 	}
 	
 	#control-right-big {
-		right: 10vw;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 70px;
-		height: 70px;
-		background-size: 70px;
+		bottom: 60px;
+		left: calc(50% + 80px);
+		transform: translateX(-50%);
 	}
 	
 	.help-button {
@@ -491,44 +461,40 @@ h3 {
 	}
 }
 
-/* Landscape Mobile Optimization */
+/* Landscape Mobile - Keep D-pad at bottom */
 @media screen and (max-width: 768px) and (orientation: landscape) {
 	#board, #canvas-board, #canvas-paths, #canvas-fruits, 
 	#canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
 	#canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
 		width: 80vh;
 		height: 80vh;
-		top: 50%;
+		top: 10%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translateX(-50%);
+	}
+	
+	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
+		width: 60px;
+		height: 60px;
+		background-size: 60px;
 	}
 	
 	#control-up-big {
-		top: 20vh;
-		width: 60px;
-		height: 60px;
-		background-size: 60px;
+		bottom: 80px;
 	}
 	
 	#control-down-big {
-		bottom: 20vh;
-		width: 60px;
-		height: 60px;
-		background-size: 60px;
+		bottom: 15px;
 	}
 	
 	#control-left-big {
-		left: 5vw;
-		width: 60px;
-		height: 60px;
-		background-size: 60px;
+		bottom: 45px;
+		left: calc(50% - 70px);
 	}
 	
 	#control-right-big {
-		right: 5vw;
-		width: 60px;
-		height: 60px;
-		background-size: 60px;
+		bottom: 45px;
+		left: calc(50% + 70px);
 	}
 	
 	#score, #highscore {
@@ -537,10 +503,11 @@ h3 {
 	}
 	
 	#canvas-lifes, #canvas-level-fruits {
-		bottom: 10px;
+		top: 50px;
 	}
 }
 
+/* Small Phones - Adjust spacing */
 @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
 	#score h2, #score span, #highscore h2, #highscore span {
 		font-size: 14px;
@@ -560,9 +527,27 @@ h3 {
 		height: 60px;
 		background-size: 60px;
 	}
+	
+	#control-up-big {
+		bottom: 90px;
+	}
+	
+	#control-down-big {
+		bottom: 15px;
+	}
+	
+	#control-left-big {
+		bottom: 50px;
+		left: calc(50% - 70px);
+	}
+	
+	#control-right-big {
+		bottom: 50px;
+		left: calc(50% + 70px);
+	}
 }
 
-/* Small Phones */
+/* Very Small Phones */
 @media screen and (max-width: 360px), screen and (max-device-width: 360px) {
 	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
 		width: 50px;
@@ -571,19 +556,21 @@ h3 {
 	}
 	
 	#control-up-big {
-		top: 12vh;
+		bottom: 80px;
 	}
 	
 	#control-down-big {
-		bottom: 12vh;
+		bottom: 15px;
 	}
 	
 	#control-left-big {
-		left: 5vw;
+		bottom: 45px;
+		left: calc(50% - 60px);
 	}
 	
 	#control-right-big {
-		right: 5vw;
+		bottom: 45px;
+		left: calc(50% + 60px);
 	}
 }
 
