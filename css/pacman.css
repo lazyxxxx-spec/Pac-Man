@@ -20,6 +20,13 @@
 	font-family: Quadrit, sans-serif;
 	font-size: 20px;
 	color: #fff;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	touch-action: manipulation;
 }
 
 html, body { 
@@ -27,12 +34,15 @@ html, body {
 	padding: 0px 0px 0px 0px;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;
+	position: fixed;
 }
 html  { 
 	background-color: #000;
 }
 body { 
 	position: relative;
+	background-color: #000;
 }
 
 
@@ -43,6 +53,7 @@ body {
 	margin: 0px;
 	padding: 0px;
 	width: 160px;
+	z-index: 1000;
 }
 #highscore { 
 	left: 180px;
@@ -80,6 +91,7 @@ body {
 	font-size: 20px;
 	color: #fff200;
 	text-align: center;
+	z-index: 1000;
 }
 #message.red { 
 	color: red;
@@ -153,6 +165,7 @@ span.combo, span.fruits {
 	width: 64px;
 	height: 64px;
 	padding: 5px;
+	touch-action: manipulation;
 }
 #control-up { 
 	top: 0px;
@@ -189,12 +202,17 @@ span.combo, span.fruits {
 
 #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
 	position: absolute;
-	opacity: 0.2;
+	opacity: 0.4;
 	margin: auto;
 	padding: 0px;
 	display: none;
 	background-size: 98px;
 	z-index: 999999;
+	touch-action: manipulation;
+	transition: opacity 0.1s;
+}
+#control-up-big:active, #control-down-big:active, #control-left-big:active, #control-right-big:active {
+	opacity: 0.7;
 }
 #control-up-big { 
 	bottom: 10px;
@@ -282,6 +300,7 @@ h3 {
 	cursor: pointer;
 	color: #78abf7;
 	transition: color 1.5s;
+	touch-action: manipulation;
 }
 .help-button.yo { 
 	color: #333;
@@ -333,16 +352,110 @@ h3 {
 	position: absolute;
 }
 
-.ui-mobile {
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	-webkit-tap-highlight-color: rgba(0,0,0,0);
+/* Mobile Responsive Styles */
+@media screen and (max-width: 768px), screen and (max-device-width: 768px) {
+	#panel, #home {
+		width: 100vw;
+		height: 100vh;
+		margin: 0;
+		padding: 0;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+	
+	#board, #canvas-board, #canvas-paths, #canvas-fruits, 
+	#canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
+	#canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
+		width: 100vw;
+		height: 100vw;
+		max-width: 100vh;
+		max-height: 100vh;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	
+	#score, #highscore {
+		top: 10px;
+		background: rgba(0,0,0,0.8);
+		padding: 5px;
+		border-radius: 5px;
+		width: 140px;
+	}
+	
+	#score {
+		left: 10px;
+	}
+	
+	#highscore {
+		right: 10px;
+		left: auto;
+	}
+	
+	#message {
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 80%;
+		font-size: 18px;
+	}
+	
+	#canvas-lifes, #canvas-level-fruits {
+		bottom: 70px;
+		top: auto;
+		background: rgba(0,0,0,0.8);
+		padding: 5px;
+		border-radius: 5px;
+	}
+	
+	#canvas-lifes {
+		left: 10px;
+	}
+	
+	#canvas-level-fruits {
+		right: 10px;
+	}
+	
+	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
+		display: block !important;
+		opacity: 0.3;
+	}
+	
+	.help-button {
+		bottom: 10px;
+		right: 10px;
+		background: rgba(0,0,0,0.8);
+		padding: 8px 12px;
+		border-radius: 5px;
+	}
+	
+	.sound, .github {
+		display: none !important;
+	}
+	
+	h1 {
+		font-size: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+		padding-top: 10px;
+	}
 }
 
-
+@media screen and (max-width: 480px), screen and (max-device-width: 480px) {
+	#score h2, #score span, #highscore h2, #highscore span {
+		font-size: 14px;
+	}
+	
+	#message {
+		font-size: 16px;
+	}
+	
+	.help-button {
+		font-size: 12px;
+		padding: 6px 10px;
+	}
+}
 
 @media screen and (min-height:1200px), screen and (min-device-height : 1200px) { 
 	#panel, #home { 
@@ -360,7 +473,6 @@ h3 {
 	#control-up-big, #control-down-big, #control-left-big, #control-right-big { 
 		display: inline; 
 	} 
-
 }
 @media screen and (max-height:640px), screen and (min-device-height : 480px) and (max-device-height : 640px) and (-webkit-device-pixel-ratio: 3) { 
 	#panel, #home { 
