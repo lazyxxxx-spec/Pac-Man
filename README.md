@@ -1,5 +1,3 @@
-Here's a comprehensive README for your Pac-Man repository:
-
 ```markdown
 # Pac-Man Game
 
