@@ -157,11 +157,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📞 Support
 
-If you encounter any issues or have questions:
-
-1. Check the [Issues](https://github.com/lazyxxxx-spec/Pac-Man/issues) page
-2. Create a new issue with detailed description
-3. Include browser and OS information for bug reports
+SOON>>
 
 ---
 
@@ -181,4 +177,4 @@ This README provides:
 7. **Mobile-friendly** considerations
 8. **Customization options** for developers
 
-You can customize this further based on your specific implementation details or additional features you've added to the game!
+
