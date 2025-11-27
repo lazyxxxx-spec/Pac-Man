@@ -394,7 +394,7 @@ span.combo, span.fruits {
 
 #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
 
-    position: absolute;
+    position: bottom;
 
     opacity: 0.4;
 
