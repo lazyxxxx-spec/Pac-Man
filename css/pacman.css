@@ -1,643 +1,668 @@
 ::-webkit-scrollbar { 
-	width: 16px;
+    width: 16px;
 }
 ::-webkit-scrollbar-track { 
-	background-color: #333;
+    background-color: #333;
 } 
 ::-webkit-scrollbar-thumb { 
-	background-color: #424e69;
+    background-color: #424e69;
 }
 ::-webkit-scrollbar-thumb:hover { 
-	background-color: #8295d5;
+    background-color: #8295d5;
 }
 
 @font-face { 
-	font-family: 'Quadrit'; 
-	src: url('../css/Quadrit.ttf'); 
+    font-family: 'Quadrit'; 
+    src: url('../css/Quadrit.ttf'); 
 }
 
 * { 
-	font-family: Quadrit, sans-serif;
-	font-size: 20px;
-	color: #fff;
-	-webkit-tap-highlight-color: transparent;
-	-webkit-touch-callout: none;
-	-webkit-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	touch-action: manipulation;
+    font-family: Quadrit, sans-serif;
+    font-size: 20px;
+    color: #fff;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    touch-action: manipulation;
 }
 
 html, body { 
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
-	width: 100%;
-	height: 100%;
-	overflow: hidden;
-	position: fixed;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
 }
-html  { 
-	background-color: #000;
+html { 
+    background-color: #000;
 }
 body { 
-	position: relative;
-	background-color: #000;
+    position: relative;
+    background-color: #000;
 }
 
 
-#score, #highscore  { 
-	position: absolute;
-	display: inline;
-	top: 70px;
-	margin: 0px;
-	padding: 0px;
-	width: 160px;
-	z-index: 1000;
+#score, #highscore { 
+    position: absolute;
+    display: inline;
+    top: 70px;
+    margin: 0px;
+    padding: 0px;
+    width: 160px;
+    z-index: 1000;
 }
 #highscore { 
-	left: 180px;
+    left: 180px;
 }
 #score h2, #score span, #highscore h2, #highscore span { 
-	display: block;
-	text-transform: uppercase;
-	font-weight: normal;
-	letter-spacing: 2px;
-	font-size: 16px;
-	height: 21px;
-	margin: 0px;
-	padding: 0px;
-	text-align: right;
-	padding-right: 15px;
+    display: block;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 16px;
+    height: 21px;
+    margin: 0px;
+    padding: 0px;
+    text-align: right;
+    padding-right: 15px;
 }
 #score span, #highscore span { 
-	padding-right: 0px;
+    padding-right: 0px;
 }
 #highscore span { 
-	padding-right: 40px;
+    padding-right: 40px;
 }
 #message { 
-	position: absolute;
-	display: inline;
-	top: 413px;
-	left: 180px;
-	margin: 0px;
-	padding: 0px;
-	width: 210px;
-	height: 30px;
-	text-transform: uppercase;
-	font-weight: normal;
-	letter-spacing: 2px;
-	font-size: 20px;
-	color: #fff200;
-	text-align: center;
-	z-index: 1000;
+    position: absolute;
+    display: inline;
+    top: 413px;
+    left: 180px;
+    margin: 0px;
+    padding: 0px;
+    width: 210px;
+    height: 30px;
+    text-transform: uppercase;
+    font-weight: normal;
+    letter-spacing: 2px;
+    font-size: 20px;
+    color: #fff200;
+    text-align: center;
+    z-index: 1000;
 }
 #message.red { 
-	color: red;
+    color: red;
 }
 
 span.combo, span.fruits { 
-	position: absolute;
-	letter-spacing: 1.5px;
-	font-size: 14px;
-	color: #89dfff;
-	font-weight: normal;
+    position: absolute;
+    letter-spacing: 1.5px;
+    font-size: 14px;
+    color: #89dfff;
+    font-weight: normal;
 }
 
 #panel, #home { 
-	width: 550px;
-	height: 690px;
-	margin: auto;
-	margin-top: 10px;
-	left: 0px;
-	right: 0px;
-	position: absolute;
-	padding: 5px 10px 10px 10px;
-	background-color: #000;
-}			
+    width: 550px;
+    height: 690px;
+    margin: auto;
+    margin-top: 10px;
+    left: 0px;
+    right: 0px;
+    position: absolute;
+    padding: 5px 10px 10px 10px;
+    background-color: #000;
+}        
 #board, #canvas-board, #canvas-paths, #canvas-fruits, #canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, #canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde { 
-	width: 550px;
-	height: 550px;
-	position: absolute;
+    width: 550px;
+    height: 550px;
+    position: absolute;
 }
 #canvas-paths { 
-	display: none;
+    display: none;
 }
 #board {  
-	position: relative;
+    position: relative;
 }
 
 #canvas-lifes, #canvas-level-fruits { 
-	height: 30px;
-	top: 670px;
-	position: absolute;
-	z-index: 111111;
+    height: 30px;
+    top: 670px;
+    position: absolute;
+    z-index: 111111;
 }
 #canvas-lifes { 
-	width: 120px;
-	left: 50px;
+    width: 120px;
+    left: 50px;
 }
 #canvas-level-fruits { 
-	width: 265px;
-	right: 50px;
+    width: 265px;
+    right: 50px;
 }
 
 #control { 
-	position: absolute;
-	margin: auto;
-	left: 0px;
-	right: 0px;
-	bottom: -145px;
-	width: 550px;
-	height: 140px;
-	background-color: #666;
-	opacity: 0.7;
-	display: none;
+    position: absolute;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    bottom: -145px;
+    width: 550px;
+    height: 140px;
+    background-color: #666;
+    opacity: 0.7;
+    display: none;
 }
 #control-up, #control-down, #control-up-second, #control-down-second, #control-left, #control-right, #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
-	position: absolute;
-	margin: auto;
-	background-repeat: no-repeat;
-	background-position: 50% 50%;
-	background-size: 64px;
-	cursor: pointer;
-	width: 64px;
-	height: 64px;
-	padding: 5px;
-	touch-action: manipulation;
+    position: absolute;
+    margin: auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 64px;
+    cursor: pointer;
+    width: 64px;
+    height: 64px;
+    padding: 5px;
+    touch-action: manipulation;
 }
 #control-up { 
-	top: 0px;
-	left: 70px;
-	background-image: url('../img/move-up.png');
+    top: 0px;
+    left: 70px;
+    background-image: url('../img/move-up.png');
 }
 #control-down { 
-	bottom: 0px;
-	right: 70px;
-	background-image: url('../img/move-down.png');
+    bottom: 0px;
+    right: 70px;
+    background-image: url('../img/move-down.png');
 }
 #control-up-second { 
-	top: 0px;
-	right: 70px;
-	background-image: url('../img/move-up.png');
+    top: 0px;
+    right: 70px;
+    background-image: url('../img/move-up.png');
 }
 #control-down-second{ 
-	bottom: 0px;
-	left: 70px;
-	background-image: url('../img/move-down.png');
+    bottom: 0px;
+    left: 70px;
+    background-image: url('../img/move-down.png');
 }
 #control-left { 
-	bottom: 0px;
-	top: 0px;
-	left: 0px;
-	background-image: url('../img/move-left.png');
+    bottom: 0px;
+    top: 0px;
+    left: 0px;
+    background-image: url('../img/move-left.png');
 }
 #control-right { 
-	bottom: 0px;
-	top: 0px;
-	right: 0px;
-	background-image: url('../img/move-right.png');
+    bottom: 0px;
+    top: 0px;
+    right: 0px;
+    background-image: url('../img/move-right.png');
 }
 
 #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
-	position: absolute;
-	opacity: 0.4;
-	margin: auto;
-	padding: 0px;
-	display: none;
-	background-size: 60px;
-	z-index: 999999;
-	touch-action: manipulation;
-	transition: opacity 0.1s;
-	width: 60px;
-	height: 60px;
+    position: absolute;
+    opacity: 0.4;
+    margin: auto;
+    padding: 0px;
+    display: none;
+    background-size: 60px;
+    z-index: 999999;
+    touch-action: manipulation;
+    transition: opacity 0.1s;
+    width: 60px;
+    height: 60px;
 }
 #control-up-big:active, #control-down-big:active, #control-left-big:active, #control-right-big:active {
-	opacity: 0.7;
+    opacity: 0.7;
 }
 #control-up-big { 
-	background-image: url('../img/move-up-big.png');
+    background-image: url('../img/move-up-big.png');
 }
 #control-down-big { 
-	background-image: url('../img/move-down-big.png');
+    background-image: url('../img/move-down-big.png');
 }
 #control-left-big { 
-	background-image: url('../img/move-left-big.png');
+    background-image: url('../img/move-left-big.png');
 }
 #control-right-big { 
-	background-image: url('../img/move-right-big.png');
+    background-image: url('../img/move-right-big.png');
 }
 
 
 
 h1 { 
-	margin: 0px 0px 74px 0px;
-	padding: 0px;
-	font-size: 24px;
-	letter-spacing: 3px;
-	color: #fff;
-	text-transform: uppercase;
-	font-style: normal;
+    margin: 0px 0px 74px 0px;
+    padding: 0px;
+    font-size: 24px;
+    letter-spacing: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
 }
 h3 { 
-	margin: 0px;
-	padding: 0px;
-	font-size: 20px;
-	letter-spacing: 2px;
-	color: #fff;
-	text-transform: uppercase;
-	font-style: normal;
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: normal;
 }
 
 .sound { 
-	position: absolute;
+    position: absolute;
 }
 .sound img { 
-	height: 28px;
+    height: 28px;
 }
 #home .sound { 
-	bottom: 0px;
-	right: 5px;
+    bottom: 0px;
+    right: 5px;
 }
 #panel .sound { 
-	top: 77px;
-	right: 5px;
+    top: 77px;
+    right: 5px;
 }
 
 .github { 
-	position: absolute;
-	bottom: 0px;
-	left: 5px;
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
 }
 
 .help-button { 
-	position: absolute;
-	text-align: center;
-	bottom: 8px;
-	right: 55px;
-	margin: auto;
-	font-size: 14px;
-	font-weight: bold;
-	text-transform: lowercase;
-	letter-spacing: 0.5px;
-	cursor: pointer;
-	color: #78abf7;
-	transition: color 1.5s;
-	touch-action: manipulation;
+    position: absolute;
+    text-align: center;
+    bottom: 8px;
+    right: 55px;
+    margin: auto;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: lowercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    color: #78abf7;
+    transition: color 1.5s;
+    touch-action: manipulation;
 }
 .help-button.yo { 
-	color: #333;
+    color: #333;
 }
 #panel .help-button { 
-	top: -510px;
-	height: 25px;
+    top: -510px;
+    height: 25px;
 }
 
 #help h2 { 
-	margin: 0px 0px 10px 0px;
-	color: #d43b3b;
-	text-transform: uppercase;
-	font-weight: bold;
-	font-size: 26px;
+    margin: 0px 0px 10px 0px;
+    color: #d43b3b;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 26px;
 }
 #help { 
-	position: absolute;
-	width: 420px;
-	height: 265px;
-	top: 290px;
-	left: 0px;
-	right: 0px;
-	margin: auto;
-	padding-top: 15px;
-	text-align: center;
-	z-index: 999999;
-	background-color: #222;
-	border: solid 1px #193fff;
-	text-transform: uppercase;
-	opacity: 0.9;
-	display: none;
-	cursor: pointer;
+    position: absolute;
+    width: 420px;
+    height: 265px;
+    top: 290px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    padding-top: 15px;
+    text-align: center;
+    z-index: 999999;
+    background-color: #222;
+    border: solid 1px #193fff;
+    text-transform: uppercase;
+    opacity: 0.9;
+    display: none;
+    cursor: pointer;
 }
-#help  table  tr  td { 
-	font-size: 16px;
-	letter-spacing: 1px;
+#help table tr td { 
+    font-size: 16px;
+    letter-spacing: 1px;
 }
-#help  table  tr  td:first-child { 
-	color: #f4c030;
-	font-weight: bold;
-	text-align: right;
+#help table tr td:first-child { 
+    color: #f4c030;
+    font-weight: bold;
+    text-align: right;
 }
-#help  table  tr  td:last-child { 
-	text-align: left;
+#help table tr td:last-child { 
+    text-align: left;
 }
 
 #sound { 
-	position: absolute;
+    position: absolute;
 }
 
 /* Mobile Responsive Styles - BOTTOM D-PAD LAYOUT */
 @media screen and (max-width: 768px), screen and (max-device-width: 768px) {
-	#panel, #home {
-		width: 100vw;
-		height: 100vh;
-		margin: 0;
-		padding: 0;
-		position: fixed;
-		top: 0;
-		left: 0;
-	}
-	
-	#board, #canvas-board, #canvas-paths, #canvas-fruits, 
-	#canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
-	#canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
-		width: 95vw;
-		height: 95vw;
-		max-width: 95vh;
-		max-height: 95vh;
-		top: 10%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	
-	#score, #highscore {
-		top: 10px;
-		background: rgba(0,0,0,0.8);
-		padding: 5px;
-		border-radius: 5px;
-		width: 140px;
-		z-index: 1000;
-	}
-	
-	#score {
-		left: 10px;
-	}
-	
-	#highscore {
-		right: 10px;
-		left: auto;
-	}
-	
-	#message {
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		width: 80%;
-		font-size: 18px;
-		z-index: 1000;
-	}
-	
-	#canvas-lifes, #canvas-level-fruits {
-		top: 70px;
-		bottom: auto;
-		background: rgba(0,0,0,0.8);
-		padding: 5px;
-		border-radius: 5px;
-		z-index: 1000;
-	}
-	
-	#canvas-lifes {
-		left: 10px;
-	}
-	
-	#canvas-level-fruits {
-		right: 10px;
-	}
-	
-	/* BOTTOM D-PAD CONTROLS - Close together */
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
-		display: block !important;
-		opacity: 0.3;
-		z-index: 9999;
-		width: 70px;
-		height: 70px;
-		background-size: 70px;
-	}
-	
-	/* D-pad layout at bottom center */
-	#control-up-big {
-		bottom: 100px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	
-	#control-down-big {
-		bottom: 20px;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	
-	#control-left-big {
-		bottom: 60px;
-		left: calc(50% - 80px);
-		transform: translateX(-50%);
-	}
-	
-	#control-right-big {
-		bottom: 60px;
-		left: calc(50% + 80px);
-		transform: translateX(-50%);
-	}
-	
-	.help-button {
-		bottom: 10px;
-		right: 10px;
-		background: rgba(0,0,0,0.8);
-		padding: 8px 12px;
-		border-radius: 5px;
-		z-index: 1000;
-	}
-	
-	.sound, .github {
-		display: none !important;
-	}
-	
-	h1 {
-		font-size: 20px;
-		margin-bottom: 20px;
-		text-align: center;
-		padding-top: 10px;
-		z-index: 1000;
-	}
+    #panel, #home {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+    
+    #board, #canvas-board, #canvas-paths, #canvas-fruits, 
+    #canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
+    #canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
+        width: 95vw;
+        height: 95vw;
+        max-width: 95vh;
+        max-height: 95vh;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #score, #highscore {
+        top: 10px;
+        background: rgba(0,0,0,0.8);
+        padding: 5px;
+        border-radius: 5px;
+        width: 140px;
+        z-index: 1000;
+    }
+    
+    #score {
+        left: 10px;
+    }
+    
+    #highscore {
+        right: 10px;
+        left: auto;
+    }
+    
+    #message {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 80%;
+        font-size: 18px;
+        z-index: 1000;
+    }
+    
+    #canvas-lifes, #canvas-level-fruits {
+        top: 70px;
+        bottom: auto;
+        background: rgba(0,0,0,0.8);
+        padding: 5px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+    
+    #canvas-lifes {
+        left: 10px;
+    }
+    
+    #canvas-level-fruits {
+        right: 10px;
+    }
+    
+    /* BOTTOM D-PAD CONTROLS - Close together (UPDATED) */
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big {
+        display: block !important;
+        opacity: 0.3;
+        z-index: 9999;
+        width: 70px;
+        height: 70px;
+        background-size: 70px;
+    }
+    
+    /* D-pad layout adjusted for closer grouping at the very bottom center */
+    #control-up-big {
+        bottom: 90px;
+        left: 50%;
+        transform: translateX(-50%); /* Centers Up */
+    }
+     
+    #control-down-big {
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%); /* Centers Down */
+    }
+     
+    #control-left-big {
+        bottom: 55px;
+        left: calc(50% - 110px); /* Moves it left of center */
+        transform: none;
+    }
+     
+    #control-right-big {
+        bottom: 55px;
+        right: calc(50% - 110px); /* Moves it right of center */
+        left: auto; /* Use right property instead of left for symmetry */
+        transform: none;
+    }
+    
+    .help-button {
+        bottom: 10px;
+        right: 10px;
+        background: rgba(0,0,0,0.8);
+        padding: 8px 12px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+    
+    .sound, .github {
+        display: none !important;
+    }
+    
+    h1 {
+        font-size: 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        padding-top: 10px;
+        z-index: 1000;
+    }
 }
 
 /* Landscape Mobile - Keep D-pad at bottom */
 @media screen and (max-width: 768px) and (orientation: landscape) {
-	#board, #canvas-board, #canvas-paths, #canvas-fruits, 
-	#canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
-	#canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
-		width: 80vh;
-		height: 80vh;
-		top: 10%;
-		left: 50%;
-		transform: translateX(-50%);
-	}
-	
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
-		width: 60px;
-		height: 60px;
-		background-size: 60px;
-	}
-	
-	#control-up-big {
-		bottom: 80px;
-	}
-	
-	#control-down-big {
-		bottom: 15px;
-	}
-	
-	#control-left-big {
-		bottom: 45px;
-		left: calc(50% - 70px);
-	}
-	
-	#control-right-big {
-		bottom: 45px;
-		left: calc(50% + 70px);
-	}
-	
-	#score, #highscore {
-		top: 5px;
-		width: 120px;
-	}
-	
-	#canvas-lifes, #canvas-level-fruits {
-		top: 50px;
-	}
+    #board, #canvas-board, #canvas-paths, #canvas-fruits, 
+    #canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
+    #canvas-ghost-pinky, #canvas-ghost-inky, #canvas-ghost-clyde {
+        width: 80vh;
+        height: 80vh;
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big {
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+    }
+    
+    /* Landscape D-pad positioning (UPDATED) */
+    #control-up-big {
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-down-big {
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-left-big {
+        bottom: 47.5px; /* Centered vertically for 60px buttons */
+        left: calc(50% - 90px); /* Moves it left of center */
+        transform: none;
+    }
+    
+    #control-right-big {
+        bottom: 47.5px; /* Centered vertically for 60px buttons */
+        right: calc(50% - 90px); /* Moves it right of center */
+        left: auto;
+        transform: none;
+    }
+    
+    #score, #highscore {
+        top: 5px;
+        width: 120px;
+    }
+    
+    #canvas-lifes, #canvas-level-fruits {
+        top: 50px;
+    }
 }
 
 /* Small Phones - Adjust spacing */
 @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
-	#score h2, #score span, #highscore h2, #highscore span {
-		font-size: 14px;
-	}
-	
-	#message {
-		font-size: 16px;
-	}
-	
-	.help-button {
-		font-size: 12px;
-		padding: 6px 10px;
-	}
-	
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
-		width: 60px;
-		height: 60px;
-		background-size: 60px;
-	}
-	
-	#control-up-big {
-		bottom: 90px;
-	}
-	
-	#control-down-big {
-		bottom: 15px;
-	}
-	
-	#control-left-big {
-		bottom: 50px;
-		left: calc(50% - 70px);
-	}
-	
-	#control-right-big {
-		bottom: 50px;
-		left: calc(50% + 70px);
-	}
+    #score h2, #score span, #highscore h2, #highscore span {
+        font-size: 14px;
+    }
+    
+    #message {
+        font-size: 16px;
+    }
+    
+    .help-button {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+    
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big {
+        width: 60px;
+        height: 60px;
+        background-size: 60px;
+    }
+    
+    /* Small Phone D-pad positioning (UPDATED) */
+    #control-up-big {
+        bottom: 85px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-down-big {
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-left-big {
+        bottom: 50px;
+        left: calc(50% - 90px);
+        transform: none;
+    }
+    
+    #control-right-big {
+        bottom: 50px;
+        right: calc(50% - 90px);
+        left: auto;
+        transform: none;
+    }
 }
 
 /* Very Small Phones */
 @media screen and (max-width: 360px), screen and (max-device-width: 360px) {
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big {
-		width: 50px;
-		height: 50px;
-		background-size: 50px;
-	}
-	
-	#control-up-big {
-		bottom: 80px;
-	}
-	
-	#control-down-big {
-		bottom: 15px;
-	}
-	
-	#control-left-big {
-		bottom: 45px;
-		left: calc(50% - 60px);
-	}
-	
-	#control-right-big {
-		bottom: 45px;
-		left: calc(50% + 60px);
-	}
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big {
+        width: 50px;
+        height: 50px;
+        background-size: 50px;
+    }
+    
+    /* Very Small Phone D-pad positioning (UPDATED) */
+    #control-up-big {
+        bottom: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-down-big {
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    #control-left-big {
+        bottom: 47.5px;
+        left: calc(50% - 75px);
+        transform: none;
+    }
+    
+    #control-right-big {
+        bottom: 47.5px;
+        right: calc(50% - 75px);
+        left: auto;
+        transform: none;
+    }
 }
 
 @media screen and (min-height:1200px), screen and (min-device-height : 1200px) { 
-	#panel, #home { 
-		zoom: 135%;
-	}
+    #panel, #home { 
+        zoom: 135%;
+    }
 }
 
 @media screen and (max-width:1024px), screen and (min-device-width : 768px) and (max-device-width : 1024px) { 
-	#home .help-button, #panel .help-button, #home .github, #sound, .sound { 
-		display: none;
-	}
-	#panel, #home { 
-		zoom: 105%;
-	}
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big { 
-		display: inline; 
-	} 
+    #home .help-button, #panel .help-button, #home .github, #sound, .sound { 
+        display: none;
+    }
+    #panel, #home { 
+        zoom: 105%;
+    }
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
+        display: inline; 
+    } 
 }
 @media screen and (max-height:640px), screen and (min-device-height : 480px) and (max-device-height : 640px) and (-webkit-device-pixel-ratio: 3) { 
-	#panel, #home { 
-		zoom: 60%;
-	}
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big { 
-		display: inline; 
-	} 
-	#home .help-button, #panel .help-button, #home .github, #sound, .sound { 
-		display: none;
-	}
-	h1, #canvas-panel-title-pacman { 
-		visibility: hidden;
-	}
+    #panel, #home { 
+        zoom: 60%;
+    }
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
+        display: inline; 
+    } 
+    #home .help-button, #panel .help-button, #home .github, #sound, .sound { 
+        display: none;
+    }
+    h1, #canvas-panel-title-pacman { 
+        visibility: hidden;
+    }
 }
 @media screen and (max-height:480px), screen and (min-device-height : 320px) and (max-device-height : 480px) { 
-	#panel, #home { 
-		zoom: 55%;
-	}
-	#control-up-big, #control-down-big, #control-left-big, #control-right-big { 
-		display: inline; 
-	} 
-	h1, #canvas-panel-title-pacman, #control-up-second, #control-down-second, #home .help-button, #panel .help-button, #home .github, #sound, .sound { 
-		display: none;
-	}
-	#score, #highscore { 
-		top: 0px;
-	}
-	#panel { 
-		padding-top: 50px;
-	}
-	#canvas-lifes, #canvas-level-fruits { 
-		top: 607px;
-	}
-	#control { 
-		bottom: 50px;
-		width: 550px;
-		height: 55px;
-	}
-	#control-up, #control-down, #control-left, #control-right { 
-		top: 0px;
-		bottom: 0px;
-		background-size: 48px;
-		width: 48px;
-		height: 48px;
-		padding: 5px;
-	}
-	#message { 
-		top: 347px;
-	}
+    #panel, #home { 
+        zoom: 55%;
+    }
+    #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
+        display: inline; 
+    } 
+    h1, #canvas-panel-title-pacman, #control-up-second, #control-down-second, #home .help-button, #panel .help-button, #home .github, #sound, .sound { 
+        display: none;
+    }
+    #score, #highscore { 
+        top: 0px;
+    }
+    #panel { 
+        padding-top: 50px;
+    }
+    #canvas-lifes, #canvas-level-fruits { 
+        top: 607px;
+    }
+    #control { 
+        bottom: 50px;
+        width: 550px;
+        height: 55px;
+    }
+    #control-up, #control-down, #control-left, #control-right { 
+        top: 0px;
+        bottom: 0px;
+        background-size: 48px;
+        width: 48px;
+        height: 48px;
+        padding: 5px;
+    }
+    #message { 
+        top: 347px;
+    }
 }
