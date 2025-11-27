@@ -148,12 +148,13 @@ span.combo, span.fruits {
     margin: auto;
     left: 0px;
     right: 0px;
-    bottom: -145px;
+    /* ADJUSTED TO BE VISIBLE ON DESKTOP/LARGE SCREENS */
+    bottom: 5px;
     width: 550px;
     height: 140px;
     background-color: #666;
     opacity: 0.7;
-    display: none;
+    /* REMOVED 'display: none;' */
 }
 #control-up, #control-down, #control-up-second, #control-down-second, #control-left, #control-right, #control-up-big, #control-down-big, #control-left-big, #control-right-big { 
     position: absolute;
@@ -336,7 +337,7 @@ h3 {
     position: absolute;
 }
 
-/* Mobile Responsive Styles - BOTTOM D-PAD LAYOUT (FIXED POSITION) */
+/* 📱 Mobile Responsive Styles - BOTTOM D-PAD LAYOUT (FIXED) */
 @media screen and (max-width: 768px), screen and (max-device-width: 768px) {
     #panel, #home {
         width: 100vw;
@@ -404,7 +405,7 @@ h3 {
         right: 10px;
     }
     
-    /* BOTTOM D-PAD CONTROLS - Close together (FIXED POSITION) */
+    /* D-pad Positioning FIX: Moved to the bottom ("green zone") */
     #control-up-big, #control-down-big, #control-left-big, #control-right-big {
         display: block !important;
         opacity: 0.3;
@@ -414,7 +415,6 @@ h3 {
         background-size: 70px;
     }
     
-    /* D-pad layout adjusted for closer grouping at the very bottom center */
     #control-up-big {
         bottom: 120px; /* Pushed further down */
         left: 50%;
@@ -462,7 +462,7 @@ h3 {
     }
 }
 
-/* Landscape Mobile - Keep D-pad at bottom (FIXED POSITION) */
+/* 🖼️ Landscape Mobile - Keep D-pad at bottom (FIXED POSITION) */
 @media screen and (max-width: 768px) and (orientation: landscape) {
     #board, #canvas-board, #canvas-paths, #canvas-fruits, 
     #canvas-pacman, #canvas-bubbles, #canvas-ghost-blinky, 
@@ -516,7 +516,7 @@ h3 {
     }
 }
 
-/* Small Phones - Adjust spacing (FIXED POSITION) */
+/* 📱 Small Phones - Adjust spacing (FIXED POSITION) */
 @media screen and (max-width: 480px), screen and (max-device-width: 480px) {
     #score h2, #score span, #highscore h2, #highscore span {
         font-size: 14px;
@@ -564,7 +564,7 @@ h3 {
     }
 }
 
-/* Very Small Phones (FIXED POSITION) */
+/* 📱 Very Small Phones (FIXED POSITION) */
 @media screen and (max-width: 360px), screen and (max-device-width: 360px) {
     #control-up-big, #control-down-big, #control-left-big, #control-right-big {
         width: 50px;
